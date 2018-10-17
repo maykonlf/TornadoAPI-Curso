@@ -75,7 +75,7 @@ def listar_bovinos():
 
 def atualizar_bovino(id, item: dict):
     conn = get_conn()
-    conn.execute("UPDATE bovinos SET nome = ?, peso = ?, nascimento = ?, disponivelVenda = ? WHERE id = ?",
+    conn.execute("UPDATE bovinos SET nome = ?, peso = ?, nascimento = ?, disponivelVenda = ?, idRaca = ? WHERE id = ?",
                  (item.get("nome"), item.get("peso"), item.get("nascimento"), item.get("disponivelVenda", False), item.get("idRaca"), id))
     conn.commit()
 
